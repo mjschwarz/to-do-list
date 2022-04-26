@@ -84,13 +84,14 @@ function List() {
 
     return (
         <div>
-            <p>Signed in as: {user.displayName}, {user.email}{' '}</p>
-            <br/>
-            <button onClick={() => {signOut(auth)}}>Log Out</button>
+            <div className="header">
+                <p className="user"> Signed in as: {user.displayName} ({user.email}){' '}</p>
+                <button className="logout-btn" onClick={() => {signOut(auth)}}>Log Out</button>
+            </div>
             <h1>To-Do List</h1>
             <div className="inputs">
                 <input type="text" value={title} onChange={event => setTitle(event.target.value)} />
-                <DatePicker onChange={setDate} value={date} />
+                <DatePicker className="date" onChange={setDate} value={date} />
                 <input type="submit" value="Add" onClick={onSubmit} />
                 <input type="button" value="Get Brightspace Link" onClick={openModal} />
                 <input type="button" value="Sync Calendar" onClick={bsSync}/>

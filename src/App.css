@@ -4,7 +4,7 @@
 }
 
 h1 {
- font-size: 40px; 
+  font-size: 40px; 
 }
 
 .item {
@@ -16,6 +16,10 @@ h1 {
   display: grid;
   grid-template-columns: 45% 45% 10%;
   align-items:center;
+}
+
+.item:hover {
+  background-color: deepskyblue;
 }
 
 .taskTitle {
@@ -34,6 +38,11 @@ h1 {
   height: 30px;
 }
 
+input, .date {
+  margin: 0 15px;
+  background-color: lightslategrey;
+}
+
 input[type='checkbox'] {
   -webkit-appearance:none;
   width:30px;
@@ -41,4 +50,39 @@ input[type='checkbox'] {
   background:white;
   border-radius:5px;
   border:2px solid #555;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  background-color: lightsteelblue;
+  padding: 5px;
+}
+
+button {
+  background-color: lightseagreen;
+}
+
+button:hover {
+  background-color: mediumseagreen;
+}
+
+.login {
+  top:50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%, 0);
+  position: absolute;
+}
+
+.login-btn {
+  padding: 50px 100px;
+}
+
+.logout-btn {
+  padding: 5px 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }
