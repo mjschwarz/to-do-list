@@ -4,10 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { deleteDoc, doc, setDoc, collection, getDocs, getDoc } from "firebase/firestore"; 
 import { db, auth } from '../database'
 import Item from './Item';
-import { setAnalyticsCollectionEnabled } from 'firebase/analytics';
+// import { setAnalyticsCollectionEnabled } from 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 
@@ -78,14 +78,14 @@ function List() {
             setTask(newArr);
         });
         getDoc(doc(db, 'users', user.uid)).then((user) => {
-            setLink(user.data().calendarurl);
+            setLink(user.data().calendarurl || '');
         })
-    }, []);
+    });
 
     return (
         <div>
             <div className="header">
-                <p className="user"> Signed in as: {user.displayName} ({user.email}){' '}</p>
+                <p className="user">Signed in as: {user.displayName} ({user.email}){' '}</p>
                 <button className="logout-btn" onClick={() => {signOut(auth)}}>Log Out</button>
             </div>
             <h1>To-Do List</h1>

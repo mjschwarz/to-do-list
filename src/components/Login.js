@@ -6,7 +6,7 @@ const provider = new GoogleAuthProvider();
 const Login = () => {
     const signInWithGoogle = async () => {
         signInWithPopup(auth, provider).then((result) => {
-            const user = result.user;
+            // const user = result.user;
         });
     }
 
