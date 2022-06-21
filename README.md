@@ -1,7 +1,5 @@
 # Brightspace To-Do List
 
-Use the [To-Do List](https://brightspace-to-do-list.netlify.app/) live online!
-
 ![Example List](example.png)
 
 # Getting Started with Create React App
